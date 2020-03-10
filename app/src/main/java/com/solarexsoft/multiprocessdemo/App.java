@@ -15,6 +15,7 @@ import android.util.Log;
 
 public class App extends Application {
     private static final String TAG = "App";
+    static Utils utils;
     @Override
     protected void attachBaseContext(Context base) {
         super.attachBaseContext(base);
@@ -25,5 +26,10 @@ public class App extends Application {
     public void onCreate() {
         super.onCreate();
         Log.d(TAG, "onCreate: classloader = " + System.identityHashCode(getClassLoader()) + ",pid = " + Process.myPid());
+        Log.d(TAG, "onCreate: utils = " + utils);
+        if (utils == null) {
+            utils = new Utils();
+            utils.test(this.toString());
+        }
     }
 }
