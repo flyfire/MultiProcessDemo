@@ -18,12 +18,12 @@ public class App extends Application {
     @Override
     protected void attachBaseContext(Context base) {
         super.attachBaseContext(base);
-        Log.d(TAG, "attachBaseContext: base = " + base + ",classloader = " + getClassLoader() + ",pid = " + Process.myPid());
+        Log.d(TAG, "attachBaseContext: base = " + base + ",classloader = " + System.identityHashCode(getClassLoader()) + ",pid = " + Process.myPid());
     }
 
     @Override
     public void onCreate() {
         super.onCreate();
-        Log.d(TAG, "onCreate: classloader = " + getClassLoader() + ",pid = " + Process.myPid());
+        Log.d(TAG, "onCreate: classloader = " + System.identityHashCode(getClassLoader()) + ",pid = " + Process.myPid());
     }
 }

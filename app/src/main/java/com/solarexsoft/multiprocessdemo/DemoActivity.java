@@ -23,6 +23,6 @@ public class DemoActivity extends AppCompatActivity {
         TextView textView = findViewById(R.id.tv);
         utils = new Utils();
         utils.test(this.toString());
-        textView.setText(String.valueOf(DemoActivity.utils == MainActivity.utils));
+        textView.setText(String.valueOf(MainActivity.utils));
     }
 }
